@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab4</title>
+    </head>
+    <body>
+    <div>
+        <div style="float: left; width:50%;">
+            <div>
+                <input type="range" id="shininess" name="shininess"
+                       min="0" max="1000">
+                <label for="shininess">Shininess</label>
+            </div>
+
+            <div>
+                <input type="range" id="power" name="power" value = "100"
+                       min="0" max="700">
+                <label for="power">Power</label>
+            </div>
+
+
+<!--            <div>-->
+<!--                <input type="range" id="KA" name="KA" value = "1000"-->
+<!--                       min="0" max="1000">-->
+<!--                <label for="KA">KA</label>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <input type="range" id="KD" name="KD" value = "1000"-->
+<!--                       min="0" max="1000">-->
+<!--                <label for="KD">KD</label>-->
+<!--            </div>-->
+
+<!--            <div>-->
+<!--                <input type="range" id="KS" name="KS" value = "1000"-->
+<!--                       min="0" max="1000">-->
+<!--                <label for="KS">KS</label>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div id="rightThing" style="float: left; width:50%;">
+            <div>
+                <label id = "shadering" style = "font-size : 40px">
+                    Phong shading
+                </label>
+            </div>
+
+            <div>
+                <label id = "ligtning" style = "font-size : 40px">
+                    Phong lightning
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+
+        <canvas id="pedestal" width="600px" height="600px">
+        </canvas>
+
+
+
+
+
+        <script src="src/gl-matrix.js"></script>
+        <script src="src/shaders.js"></script>
+        <script src="src/funcs.js"></script>
+        <script src="src/index.js"></script>
+    </body>
+</html>
