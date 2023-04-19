@@ -63,6 +63,14 @@ gl.uniform1f(gouraudShadingLocation, isGouraudShading);
 let isLambertLigtning = -1
 gl.uniform1f(lambertLocation, isLambertLigtning);
 
+var blinnLocation = gl.getUniformLocation(shaderProgram, "blinn");
+let isBlinnLightning = -1
+gl.uniform1f(blinnLocation, isBlinnLightning);
+
+var tunLocation = gl.getUniformLocation(shaderProgram, "tun");
+let isTunLightning = -1
+gl.uniform1f(tunLocation, isTunLightning);
+
 
 var KALocation = gl.getUniformLocation(shaderProgram, "Ka");
 var KDLocation = gl.getUniformLocation(shaderProgram, "Kd");
@@ -244,11 +252,37 @@ document.addEventListener('keydown', (event) => {
             else document.getElementById('shadering').innerHTML
                 = 'Phong shading';
             break
+        case "b":
+            isBlinnLightning *= -1
+            gl.uniform1f(blinnLocation, isBlinnLightning);
+            if(isBlinnLightning == 1) {
+                document.getElementById('ligtning').innerHTML
+                    = 'Bling-Phong lightning';
+            }
+            else {
+                document.getElementById('ligtning').innerHTML
+                    = 'Phong lightning';
+            }
+
+            break
+
+        case "t":
+            isTunLightning *= -1
+            gl.uniform1f(tunLocation, isTunLightning);
+            if(isTunLightning == 1) {
+                document.getElementById('ligtning').innerHTML
+                    = 'Tune shading';
+            }
+            else {
+                document.getElementById('ligtning').innerHTML
+                    = 'Phong lightning';
+            }
+
+            break
     }
 }, false);
 
 initBuffersCube()
-// setNormals()
 gl.uniform3fv(lightWorldPositionLocation, [20, 30, 50]);
 
 
